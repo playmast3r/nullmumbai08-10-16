@@ -12,7 +12,7 @@ if (isset ($_GET['qty']) && isset($_GET['id'])) {
 
 
 ?>
-
+ 
 <!DOCTYPE html>
 <html lang="en">
    <head>
