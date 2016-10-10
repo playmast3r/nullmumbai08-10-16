@@ -1,13 +1,15 @@
 <?php
+//this script is safe from sql injection
+//its a sample script to showcase parametrized query
 
 $db = new PDO('mysql:host=127.0.0.1;dbname=null', 'root','root');
 if (isset ($_POST['email'])) {
 	
 	$email = $_POST['email'];
 
-	
+	//prepare the statement
 	$user = $db->prepare("SELECT * FROM users WHERE email = :email");
-	
+	//replace the email tag with the value of email got from form
 	$user->execute([
 	'email' => $email,
 	]);
