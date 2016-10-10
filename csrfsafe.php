@@ -4,10 +4,11 @@ session_start();
 if (isset ($_GET['qty']) && isset($_GET['id'])) {
 
 	$qty = $_GET['qty'];
-    $id = $_GET['id'];
-    if($_GET['token'] === $_SESSION['token']) 	{
+        $id = $_GET['id'];
+	//check token received from form and token value in session variable
+        if($_GET['token'] === $_SESSION['token']) 	{
 		echo "<h2>Order placed.</h2> <br><br> Product id: ". $id . " and quantity is ". $qty;
-	    $_SESSION['token'] = 0;
+	        $_SESSION['token'] = 0;
 		die();
 	}
 	else {
@@ -15,6 +16,7 @@ if (isset ($_GET['qty']) && isset($_GET['id'])) {
 	    die();
 	}
 }
+//when user visits the page generate and set the token in session variable
 else  {
 	$token = md5(openssl_random_pseudo_bytes(15));
 	$_SESSION['token'] = $token;
@@ -31,6 +33,7 @@ else  {
    <body>
       <h2>CSRF Demo</h2>
       <form action="csrfsafe.php" method="get" autocomplete="off">
+	     <!-- Pass token value in form too -->
 	     <input type="hidden" value="<?php echo $token ?>" name="token" id="token">
 	     <label for="id">
 		 Product id:
