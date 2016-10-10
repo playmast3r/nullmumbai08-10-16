@@ -1,5 +1,6 @@
 <?php
-
+//GD is inbuilt library used in this script to recreate image files
+//Other alternative is Imagick library which you need to install as its not inbuilt
 function LoadJpeg($imgname)
 {
     /* Attempt to open */
@@ -22,9 +23,10 @@ function LoadJpeg($imgname)
     return $im;
 }
 
-
+//open the malicious image with php embeded code
 $img = LoadJpeg('image.jpg');
-
+//write new image file from original image which doesnt have embeded php code
 imagejpeg($img, 'image-safe.jpg');
+//destroy original image to clear memory
 imagedestroy($img);
 ?>
