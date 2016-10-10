@@ -1,10 +1,10 @@
 <?php
-
+//this file is vulnerable to csrf attack. Use csrf-attack.php to do attack on this script
 
 if (isset ($_GET['qty']) && isset($_GET['id'])) {
 	
 	$qty = $_GET['qty'];
-    $id = $_GET['id'];
+        $id = $_GET['id'];
 	
 	echo "<h2>Order placed.</h2> <br><br> Product id: ". $id . " and quantity is ". $qty;
 	die();
