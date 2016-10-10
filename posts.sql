@@ -1,3 +1,6 @@
+-- Use this file to bring back the "posts" table after successful sql injection from sqlinjection.php
+
+
 -- phpMyAdmin SQL Dump
 -- version 4.5.1
 -- http://www.phpmyadmin.net
