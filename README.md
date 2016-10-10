@@ -9,4 +9,5 @@ Topics Covered:
   4. Image Upload Vulnerability
   5. Safeguarding scripts
 
+Presentation Link: http://www.slideshare.net/SiddharthMahajan21/null-mumbai-08102016-php-security
   
