@@ -1,4 +1,8 @@
 <?php
+//this script is vulnerable to sql injection
+//use  
+//'; DROP TABLE posts; --
+//to delete posts table from the database
 
 $db = new PDO('mysql:host=127.0.0.1;dbname=null', 'root','root');
 if (isset ($_POST['email'])) {
@@ -12,7 +16,6 @@ if (isset ($_POST['email'])) {
 	}
 }
 
-// '; DROP TABLE posts; --
 ?>
 
 <!DOCTYPE html>
